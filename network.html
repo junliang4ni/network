@@ -1,0 +1,27 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<!-- load D3js -->
+<script src="d3.js"></script>
+
+<!-- load D3plus after D3js -->
+<script src="d3plus.js"></script>
+
+<!-- load D3plus after D3js -->
+<script src="test-5.js"></script>
+
+<!-- create container element for visualization -->
+<div id="viz"></div>
+
+<script>
+    // instantiate d3plus
+    var visualization = d3plus.viz()
+        .container("#viz") // container DIV to hold the visualization
+        .type("network") // visualization type
+        .data(sample_data) // sample dataset to attach to nodes
+        //.nodes(positions)   // x and y position of nodes
+        .edges(connections) // list of node connections
+        .size("size") // key to size the nodes
+        .id("name") // key for which our data is unique on
+        .draw() // finally, draw the visualization!
+</script>
