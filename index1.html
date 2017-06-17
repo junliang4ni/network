@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!--
+	Interphase by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="zh">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>飲料訂購系統</title>
+    <link rel="stylesheet" href="css/skel.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-xlarge.css" />
+    <link rel="stylesheet" href="css/common.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/datepicker3.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="dist/sweetalert.css">
+    <script src="dist/sweetalert.min.js"></script>
+
+    <!--Icons-->
+    <script src="js/lumino.glyphs.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+
+</head>
+
+
+<body class="landing">
+    <section id="banner">
+        <h2 class="header__animation-chunk header__h1">口渴了嗎</h2>
+        <div class="header__animation-chunk">
+            揪團訂飲料吧
+        </div>
+        <ul class="header__animation-chunk actions">
+            <li>
+                <a href="#anchor" class="button big">馬上訂購</a>
+            </li>
+        </ul>
+    </section>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">訂購</div>
+                <div class="panel-body">
+                    <div class="col-md-6">
+                        <form role="form">
+
+                            <div class="form-group">
+                                <label>E-mail</label>
+                                <input name="mail" class="form-control" placeholder="請填入您的Email">
+                            </div>
+
+                            <div class="form-group">
+                                <label>選擇飲料</label>
+                                <select name="species" class="form-control">
+										<option>珍珠奶茶 $50</option>
+										<option>茉莉花茶 $35</option>
+										<option>高山烏龍 $30</option>
+										<option>多多綠茶 $45</option>
+									</select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Search type</label>
+                                <div class="radio">
+                                    <label>
+											<input type="radio" name="searchType" id="optionsRadios1" value="1" checked>線上付款
+										</label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+											<input type="radio" name="searchType" id="optionsRadios2" value="2">貨到付款
+										</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Search Content</label>
+                                <input name="query" class="form-control" placeholder="Leave some queries as the search term here!">
+                            </div>
+
+                            <button type="button" onclick="submitJob(mail,species,searchType,query)" class="btn btn-primary">Submit</button>
+                            <button type="reset" class="btn btn-default">重設</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.col-->
+        <a name="anchor"></a>
+    </div>
+    <!-- /.row -->
+
+    </div>
+    <!--/.main-->
+    <script>
+        function check(mail, species, searchType, query) {
+
+            if (!validateEmail(mail)) {
+                swal("error", "You have entered an invalid email address!", "error");
+                return false;
+            } else if (searchType.value == 1) {
+                if (!textCheck(query)) {
+                    swal("error", "You have entered an invalid query!", "error");
+                    return false;
+                }
+            } else {
+                if (!sequenceCheck(query)) {
+                    swal("error", "You have entered an invalid query!", "error");
+                    return false;
+                }
+            }
+
+
+            //swal("Good job!", " ", "success");
+            return true;
+
+
+
+        }
+
+        function validateEmail(inputText) {
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (inputText.value.match(mailformat))
+                return true;
+            else
+                return false;
+        }
+
+        function textCheck(inputText) {
+            var textformat = /[a-zA-Z0-9]/;
+            if (inputText.value.match(textformat))
+                return true;
+            else
+                return false;
+        }
+
+        function sequenceCheck(inputText) {
+            var badsequenceformat = /[^ATCGN]/;
+            if (inputText.value.match(badsequenceformat) || inputText.value.length == 0)
+                return false;
+            else
+                return true;
+        }
+    </script>
+</body>
+
+</html>

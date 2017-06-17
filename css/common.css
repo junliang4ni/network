@@ -1,0 +1,247 @@
+#header__h1 {
+    color: #4dac71;
+}
+
+.animation--fadezoom-in {
+    position: relative;
+    display: block;
+    opacity: 0;
+    transform: scale(0.95);
+    animation-name: fadezoom-in;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+    animation-delay: 0;
+    animation-fill-mode: forwards;
+}
+
+.animation--fadezoom-in:nth-child(1) {
+    animation-delay: 0ms;
+}
+
+.animation--fadezoom-in:nth-child(2) {
+    animation-delay: 40ms;
+}
+
+.animation--fadezoom-in:nth-child(3) {
+    animation-delay: 80ms;
+}
+
+.animation--fadezoom-in:nth-child(4) {
+    animation-delay: 120ms;
+}
+
+.animation--fadezoom-in:nth-child(5) {
+    animation-delay: 160ms;
+}
+
+.animation--fadezoom-in:nth-child(6) {
+    animation-delay: 200ms;
+}
+
+.animation--fadezoom-in:nth-child(7) {
+    animation-delay: 240ms;
+}
+
+.animation--fadezoom-in:nth-child(8) {
+    animation-delay: 280ms;
+}
+
+.animation--fadezoom-in:nth-child(9) {
+    animation-delay: 320ms;
+}
+
+.animation--fadezoom-in:nth-child(10) {
+    animation-delay: 360ms;
+}
+
+.animation--fadezoom-in:nth-child(11) {
+    animation-delay: 400ms;
+}
+
+.animation--fadezoom-in:nth-child(12) {
+    animation-delay: 440ms;
+}
+
+.animation--fadezoom-in:nth-child(13) {
+    animation-delay: 480ms;
+}
+
+.animation--fadezoom-in:nth-child(14) {
+    animation-delay: 520ms;
+}
+
+.animation--fadezoom-in:nth-child(15) {
+    animation-delay: 560ms;
+}
+
+.animation--fadezoom-in:nth-child(16) {
+    animation-delay: 600ms;
+}
+
+.animation--fadezoom-in:nth-child(17) {
+    animation-delay: 640ms;
+}
+
+.animation--fadezoom-in:nth-child(18) {
+    animation-delay: 680ms;
+}
+
+.animation--fadezoom-in:nth-child(19) {
+    animation-delay: 720ms;
+}
+
+.animation--fadezoom-in:nth-child(20) {
+    animation-delay: 760ms;
+}
+
+.animation--fade-in {
+    opacity: 0;
+    animation-name: fade-in;
+    animation-duration: 400ms;
+    animation-iteration-count: 1;
+    animation-delay: 0;
+    animation-fill-mode: forwards;
+}
+
+.animation--slidein-leave {
+    opacity: 0;
+    animation-name: slidein-leave;
+    animation-duration: 600ms;
+    animation-fill-mode: forwards;
+    transform: translate3d(0, 100px, 0);
+}
+
+.animation--slidein-enter {
+    opacity: 1;
+    animation-name: slidein-enter;
+    animation-duration: 600ms;
+    animation-fill-mode: forwards;
+}
+
+.animation--bounce {
+    animation-name: bounce;
+    animation-duration: 600ms;
+}
+
+.animation--bounce-inwards {
+    animation-name: bounce-inwards;
+    animation-duration: 600ms;
+}
+
+.header__animation-chunk {
+    opacity: 0;
+    transform: translate3d(0, 35px, 0);
+    animation-name: slideup-in;
+    animation-duration: 600ms;
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation-fill-mode: forwards;
+}
+
+.header__animation-chunk:nth-child(1) {
+    animation-delay: 0ms;
+}
+
+.header__animation-chunk:nth-child(2) {
+    animation-delay: 600ms;
+}
+
+.header__animation-chunk:nth-child(3) {
+    animation-delay: 1200ms;
+}
+
+.header__animation-chunk:nth-child(4) {
+    animation-delay: 1800ms;
+}
+
+.header__animation-chunk:nth-child(5) {
+    animation-delay: 2400ms;
+}
+
+@keyframes slideup-in {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 35px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.footer {
+    color: #757575;
+}
+
+.footer ul li a {
+    color: #757575;
+}
+
+.footer h4 {
+    font-size: 14px;
+}
+
+.footer h3 {
+    font-size: 14px;
+    color: #7fc857;
+    font-family: Akzidenz Grotesk BQ Medium, Helvetica;
+}
+
+.footer p,
+.footer .list li>a {
+    display: block;
+    margin: 15px 0;
+    font-size: 12px;
+    color: #757575;
+    line-height: 1.5em;
+}
+
+.footer .captora li {
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 2px;
+}
+
+.footer .captora li:not(:last-child):after {
+    content: ',';
+}
+
+.footer__list {
+    width: 195px;
+    margin: 0 15px;
+    max-width: 100%;
+}
+
+@media (max-width: 1150px) {
+    .footer__list {
+        width: calc(50% - 90px) !important;
+        margin: 0 45px;
+    }
+}
+
+@media (max-width: 550px) {
+    .footer__list {
+        width: 100% !important;
+        margin: 0 45px;
+    }
+}
+
+
+/**:not(input[type=radio]):not(input[type=checkbox]) {
+    -webkit-overflow-scrolling: touch;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-appearance: none;
+}*/
+
+.form--dirty input:invalid:not(:placeholder-shown) {
+    border: 1px solid #dd4661 !important;
+    background-color: rgba(255, 221, 221, 0.54) !important;
+}
+
+input:invalid {
+    box-shadow: none !important;
+}
+
+.monospace {
+    font-family: monospace !important;
+    font-size: 1em;
+}

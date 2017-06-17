@@ -1,27 +1,206 @@
-<!doctype html>
-<meta charset="utf-8">
+<!DOCTYPE html>
+<html>
 
-<!-- load D3js -->
-<script src="d3.js"></script>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>喝飲料囉
+    </title>
 
-<!-- load D3plus after D3js -->
-<script src="d3plus.js"></script>
+    <link rel="stylesheet" href="css/skel.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-xlarge.css" />
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/datepicker3.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="Shortcut Icon" type="image/x-icon" href="images/40_93c3d3ee.jpg" />
+    <link rel="stylesheet" type="text/css" href="dist/sweetalert.css">
 
-<!-- load D3plus after D3js -->
-<script src="test-5.js"></script>
+</head>
 
-<!-- create container element for visualization -->
-<div id="viz"></div>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><span>飲料訂購系統</span> produced by B02611032</a>
+            </div>
+        </div>
+    </nav>
+    <section id="banner">
+        <h2 class="header__animation-chunk">
+            <font face="微軟正黑體">口渴了嗎</font>
+        </h2>
+        <div class="header__animation-chunk">
+            <font face="微軟正黑體">揪團訂飲料吧</font>
+        </div>
+        <ul class="header__animation-chunk actions">
+            <li>
+                <a href="#anchor" class="button big">看看有什麼好喝的</a>
 
-<script>
-    // instantiate d3plus
-    var visualization = d3plus.viz()
-        .container("#viz") // container DIV to hold the visualization
-        .type("network") // visualization type
-        .data(sample_data) // sample dataset to attach to nodes
-        //.nodes(positions)   // x and y position of nodes
-        .edges(connections) // list of node connections
-        .size("size") // key to size the nodes
-        .id("name") // key for which our data is unique on
-        .draw() // finally, draw the visualization!
-</script>
+            </li>
+        </ul>
+
+    </section>
+
+    <a id="anchor"></a>
+    <section id="two" class="wrapper style2 align-center">
+        <div class="container">
+            <header>
+                <br>
+                <h1 class="introduce">
+                    <font face="微軟正黑體">為您推薦</font>
+                </h1>
+                <p>Is it good to drink?</p>
+            </header>
+            <div class="row">
+                <section class="feature 6u 12u$(small)">
+                    <img class="image fit" src="images/pic01.jpg" alt="" />
+                    <h3 class="title">冰淇淋紅茶</h3>
+                    <p>紅茶搭配冰涼的冰淇淋，絕對是夏天的一大享受</p>
+                </section>
+                <section class="feature 6u$ 12u$(small)">
+                    <img class="image fit" src="images/pic02.jpg" alt="" />
+                    <h3 class="title">水果茶</h3>
+                    <p>各種類型水果組合，迸出新滋味!</p>
+                </section>
+            </div>
+            <footer>
+                <ul class="actions">
+                    <li>
+                        <a href="#anchor2" class="button alt big">馬上訂購</a>
+                    </li>
+                </ul>
+            </footer>
+
+            <br>
+            <br>
+            <br>
+            <a id="anchor2"></a>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">填寫表單</div>
+                <div class="panel-body">
+                    <form role="form">
+
+                        <div class="form-group">
+                            <label class="self">稱謂</label>
+                            <input name="name" class="form-control" placeholder="該怎麼稱呼您?">
+                        </div>
+                        <div class="form-group">
+                            <label class="self">手機</label>
+                            <input name="phone" class="form-control" placeholder="請輸入您的手機號碼">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="self">選擇飲料</label>
+                            <select name="drink" class="form-control">
+                                <option value="1">珍珠奶茶 $45</option>
+                                <option value="2">水果茶 $50</option>
+                                <option value="3">奶茶 $40</option>
+                                <option value="4">奶綠 $40</option>
+                                <option value="5">紅茶瑪奇朵 $45</option>
+                                <option value="6">烏龍瑪奇朵 $45</option>
+                                <option value="7">四季奶青 $50</option>
+                                <option value="8">黃金烏龍奶茶 $45</option>
+                                <option value="9">阿華田 $50</option>
+                                <option value="10">可可芭蕾 $50</option>
+                                <option value="11">檸檬汁 $45</option>
+                                <option value="12">金桔檸檬 $40</option>
+                                <option value="13">檸檬梅汁 $45</option>
+                                <option value="14">檸檬養樂多 $40</option>
+                                <option value="15">8冰茶 $50</option>	
+							</select>
+                        </div>
+                        <div class="form-group">
+                            <label class="self">糖量</label>
+                            <div class="radio">
+                                <label>
+									<input type="radio" name="sugar" id="optionsRadios1" value="1" checked>正常
+								</label>
+                            </div>
+                            <div class="radio">
+                                <label>
+									<input type="radio" name="sugar" id="optionsRadios2" value="2">半糖
+								</label>
+                            </div>
+                            <div class="radio">
+                                <label>
+									<input type="radio" name="sugar" id="optionsRadios3" value="2">少糖
+							    </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+									<input type="radio" name="sugar" id="optionsRadios4" value="2">無糖
+								</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="self">冰量</label>
+                            <div class="radio">
+                                <label>
+									<input type="radio" name="ice" id="optionsRadios1" value="1" checked>正常
+								</label>
+                            </div>
+                            <div class="radio">
+                                <label>
+									<input type="radio" name="ice" id="optionsRadios2" value="2">半冰
+								</label>
+                            </div>
+                            <div class="radio">
+                                <label>
+									<input type="radio" name="ice" id="optionsRadios3" value="2">少冰
+								</label>
+                            </div>
+                            <div class="radio">
+                                <label>
+									<input type="radio" name="ice" id="optionsRadios4" value="2">去冰
+								</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="self">有什麼話想說嗎?</label>
+                            <input name="tell" class="form-control" placeholder="今天真是個喝飲料的好日子呢">
+                        </div>
+
+                        <button type="button" onclick="submitJob(name,phone,drink,sugar,ice,tell)" class="btn btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-default">Reset</button>
+                        <p id="demo"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    <footer id="footer">
+        <div class="container">
+            <ul class="copyright">
+                <li>&copy; Drink2017. All rights reserved.</li>
+                <li>Design: <a href="http://templated.co">TEMPLATED</a> & Jun-Liang Lin </li>
+                <li>Course: <a href="http://www.csie.ntu.edu.tw/~kmchao/bcc17spr/index.htm">Introduction to Computer Science</a> </li>
+            </ul>
+        </div>
+    </footer>
+
+
+    <script src="dist/sweetalert.min.js"></script>
+    <script src="js/jquery-1.12.4.js"></script>
+
+    <script>
+        function submitJob(name, phone, drink, sugar, ice, tell) {
+            // alert(name)
+            //     // if (length(name.value) == 0)
+            //     //     swal("請填入名字", "", "error");
+            //     // else if (phone == "")
+            //     //     swal("請填入電話", "", "error");
+            //     // else
+            // c = "aaa" + String(name)
+            // document.getElementById("demo").innerHTML = c;
+            swal("已收到您的訂單", "請稍加等候", "success");
+        }
+    </script>
+</body>
+
+</html>
