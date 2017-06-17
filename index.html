@@ -53,7 +53,7 @@
                 </h1>
                 <p>Is it good to drink?</p>
             </header>
-            <div class="row">
+            <div class="row" id="display">
                 <section class="feature 6u 12u$(small)">
                     <img class="image fit" src="images/pic01.jpg" alt="" />
                     <h3 class="title">冰淇淋紅茶</h3>
@@ -69,6 +69,7 @@
                 <ul class="actions">
                     <li>
                         <a href="#anchor2" class="button alt big">馬上訂購</a>
+                        <button onclick="change()" class="button alt big" title="沒有換請多點幾下^^">多點幾次換一個</button>
                     </li>
                 </ul>
             </footer>
@@ -85,7 +86,7 @@
 
                         <div class="form-group">
                             <label class="self">稱謂</label>
-                            <input name="name" class="form-control" placeholder="該怎麼稱呼您?">
+                            <input name="names" class="form-control" placeholder="該怎麼稱呼您?">
                         </div>
                         <div class="form-group">
                             <label class="self">手機</label>
@@ -95,43 +96,43 @@
                         <div class="form-group">
                             <label class="self">選擇飲料</label>
                             <select name="drink" class="form-control">
-                                <option value="1">珍珠奶茶 $45</option>
-                                <option value="2">水果茶 $50</option>
-                                <option value="3">奶茶 $40</option>
-                                <option value="4">奶綠 $40</option>
-                                <option value="5">紅茶瑪奇朵 $45</option>
-                                <option value="6">烏龍瑪奇朵 $45</option>
-                                <option value="7">四季奶青 $50</option>
-                                <option value="8">黃金烏龍奶茶 $45</option>
-                                <option value="9">阿華田 $50</option>
-                                <option value="10">可可芭蕾 $50</option>
-                                <option value="11">檸檬汁 $45</option>
-                                <option value="12">金桔檸檬 $40</option>
-                                <option value="13">檸檬梅汁 $45</option>
-                                <option value="14">檸檬養樂多 $40</option>
-                                <option value="15">8冰茶 $50</option>	
+                                <option value="珍珠奶茶">珍珠奶茶 $45</option>
+                                <option value="水果茶">水果茶 $50</option>
+                                <option value="奶茶">奶茶 $40</option>
+                                <option value="奶綠">奶綠 $40</option>
+                                <option value="紅茶瑪奇朵">紅茶瑪奇朵 $45</option>
+                                <option value="烏龍瑪奇朵">烏龍瑪奇朵 $45</option>
+                                <option value="四季奶青">四季奶青 $50</option>
+                                <option value="黃金烏龍奶茶">黃金烏龍奶茶 $45</option>
+                                <option value="阿華田">阿華田 $50</option>
+                                <option value="可可芭蕾">可可芭蕾 $50</option>
+                                <option value="檸檬汁">檸檬汁 $45</option>
+                                <option value="金桔檸檬">金桔檸檬 $40</option>
+                                <option value="檸檬梅汁">檸檬梅汁 $45</option>
+                                <option value="檸檬養樂多">檸檬養樂多 $40</option>
+                                <option value="8冰茶">8冰茶 $50</option>	
 							</select>
                         </div>
                         <div class="form-group">
                             <label class="self">糖量</label>
                             <div class="radio">
                                 <label>
-									<input type="radio" name="sugar" id="optionsRadios1" value="1" checked>正常
+									<input type="radio" name="sugar" id="optionsRadios1" value="正常甜" checked>正常甜
 								</label>
                             </div>
                             <div class="radio">
                                 <label>
-									<input type="radio" name="sugar" id="optionsRadios2" value="2">半糖
+									<input type="radio" name="sugar" id="optionsRadios2" value="半糖">半糖
 								</label>
                             </div>
                             <div class="radio">
                                 <label>
-									<input type="radio" name="sugar" id="optionsRadios3" value="2">少糖
+									<input type="radio" name="sugar" id="optionsRadios3" value="少糖">少糖
 							    </label>
                             </div>
                             <div class="radio">
                                 <label>
-									<input type="radio" name="sugar" id="optionsRadios4" value="2">無糖
+									<input type="radio" name="sugar" id="optionsRadios4" value="無糖">無糖
 								</label>
                             </div>
                         </div>
@@ -139,22 +140,22 @@
                             <label class="self">冰量</label>
                             <div class="radio">
                                 <label>
-									<input type="radio" name="ice" id="optionsRadios1" value="1" checked>正常
+									<input type="radio" name="ice" id="optionsRadios1" value="正常冰" checked>正常冰
 								</label>
                             </div>
                             <div class="radio">
                                 <label>
-									<input type="radio" name="ice" id="optionsRadios2" value="2">半冰
+									<input type="radio" name="ice" id="optionsRadios2" value="半冰">半冰
 								</label>
                             </div>
                             <div class="radio">
                                 <label>
-									<input type="radio" name="ice" id="optionsRadios3" value="2">少冰
+									<input type="radio" name="ice" id="optionsRadios3" value="少冰">少冰
 								</label>
                             </div>
                             <div class="radio">
                                 <label>
-									<input type="radio" name="ice" id="optionsRadios4" value="2">去冰
+									<input type="radio" name="ice" id="optionsRadios4" value="去冰">去冰
 								</label>
                             </div>
                         </div>
@@ -163,10 +164,10 @@
                             <label class="self">有什麼話想說嗎?</label>
                             <input name="tell" class="form-control" placeholder="今天真是個喝飲料的好日子呢">
                         </div>
-
-                        <button type="button" onclick="submitJob(name,phone,drink,sugar,ice,tell)" class="btn btn-primary">Submit</button>
-                        <button type="reset" class="btn btn-default">Reset</button>
                         <p id="demo"></p>
+                        <button type="button" onclick="submitJob(names,phone,drink,sugar,ice,tell)" class="btn btn-primary">Submit</button>
+                        <button type="reset" class="btn btn-default">Reset</button>
+
                     </form>
                 </div>
             </div>
@@ -182,6 +183,7 @@
                 <li>Course: <a href="http://www.csie.ntu.edu.tw/~kmchao/bcc17spr/index.htm">Introduction to Computer Science</a> </li>
             </ul>
         </div>
+
     </footer>
 
 
@@ -190,15 +192,43 @@
 
     <script>
         function submitJob(name, phone, drink, sugar, ice, tell) {
-            // alert(name)
-            //     // if (length(name.value) == 0)
-            //     //     swal("請填入名字", "", "error");
-            //     // else if (phone == "")
-            //     //     swal("請填入電話", "", "error");
-            //     // else
-            // c = "aaa" + String(name)
+
+            // c = "aaa" + String(name.value)
             // document.getElementById("demo").innerHTML = c;
-            swal("已收到您的訂單", "請稍加等候", "success");
+
+            if (String(name.value) == "")
+                swal("請填入稱謂", "", "error");
+            else if (!phone.value.match(/[0-9]/))
+                swal("請填入有效電話", "", "error");
+            else {
+                if (String(tell.value) == "")
+                    tell.value = "請稍加等候";
+                ss = "已收到您的訂單:\n" + drink.value + " " + sugar.value + ice.value;
+                swal(ss, tell.value, "success");
+            }
+
+        }
+
+        function change() {
+
+            var a = "<section class=\"feature 6u 12u$(small)\"><img class=\"image \
+            fit\" src=\"images/pic01.jpg\" alt=\"\" /><h3 class=\"title\">冰淇淋紅茶 \
+            </h3><p>紅茶搭配冰涼的冰淇淋，絕對是夏天的一大享受</p></section><section \
+            class=\"feature 6u$ 12u$(small)\"><img class=\"image fit\" src=\"images/pic02.jpg\" \
+            alt=\"\" /><h3 class=\"title\">水果茶</h3><p>各種類型水果組合，迸出新滋味!</p></section>"
+            var b = "<section class=\"feature 6u 12u$(small)\"><img class=\"image \
+            fit\" src=\"images/pic03.jpg\" alt=\"\" /><h3 class=\"title\">阿華田 \
+            </h3><p>回憶童年、好喝無負擔!</p></section><section \
+            class=\"feature 6u$ 12u$(small)\"><img class=\"image fit\" src=\"images/pic04.jpg\" \
+            alt=\"\" /><h3 class=\"title\">金桔檸檬</h3><p>酸酸甜甜的好味道不容錯過!</p></section>"
+            var c = "<section class=\"feature 6u 12u$(small)\"><img class=\"image \
+            fit\" src=\"images/pic05.jpg\" alt=\"\" /><h3 class=\"title\">黃金烏龍奶茶 \
+            </h3><p>選用頂級黃金烏龍茶調製，順而不膩</p></section><section \
+            class=\"feature 6u$ 12u$(small)\"><img class=\"image fit\" src=\"images/pic06.jpg\" \
+            alt=\"\" /><h3 class=\"title\">8冰茶</h3><p>梅汁和金吉汁的完美組合，夏日最解渴!</p></section>"
+            var gg = [a, b, c]
+            var num = Math.floor((Math.random() * 3));
+            document.getElementById("display").innerHTML = gg[num];
         }
     </script>
 </body>
